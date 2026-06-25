@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-delayed {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+:root {
+  --background: #FAF8F5;
+  --foreground: #111B15;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Custom Cursor Hide Rules on Desktop */
+@media (min-width: 1024px) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Premium Glassmorphism classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-panel {
+  background: rgba(11, 27, 18, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Text Reveal Helpers */
+.reveal-wrapper {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.reveal-char {
+  display: inline-block;
+}
+
+/* Ambient radial color spots */
+.glow-spot-gold {
+  background: radial-gradient(circle at center, rgba(212, 178, 111, 0.15) 0%, rgba(212, 178, 111, 0) 70%);
+}
+
+.glow-spot-green {
+  background: radial-gradient(circle at center, rgba(20, 75, 39, 0.08) 0%, rgba(20, 75, 39, 0) 70%);
+}
+
